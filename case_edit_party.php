@@ -44,7 +44,7 @@
 <?php foreach ($parties as $party): ?>
     <div id="editPartyModal-<?= $party['party_id'] ?>" class="modal">
         <div class="modal-content">
-            <span class="close">\
+            <span class="close">
                 <i class="h3 bi bi-x"></i>
             </span>
             <div class="modal-header">
