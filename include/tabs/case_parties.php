@@ -53,9 +53,11 @@
                     </td>
 
                     <td class="text-center">
-                        <button class="btn btn-warning btn-sm" id="editPartyBtn">
-                            <i class="bi bi-pencil-square"></i> Edit
+                        <button class="btn btn-warning btn-sm editPartyBtn" data-party-id="<?= $party['party_id'] ?>">
+                            <i class="bi bi-pencil-square"></i> 
+                            Edit 
                         </button>
+
                     </td>
                 </tr>
                 <?php endwhile; ?>

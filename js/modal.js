@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modals = [
         { modalId: 'addCaseModal', btnId: 'addCaseBtn' },
         { modalId: 'addDocsModal', btnId: 'addDocsBtn' },
-        { modalId: 'addPartyModal', btnId: 'addPartyBtn'},
-        { modalId: 'editPartyModal', btnId: 'editPartyBtn'}
+        { modalId: 'addPartyModal', btnId: 'addPartyBtn'}
     ];
 
     modals.forEach(item => {
@@ -39,3 +38,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
