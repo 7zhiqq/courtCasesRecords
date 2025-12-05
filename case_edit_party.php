@@ -8,24 +8,22 @@
 
     $case_id = mysqli_real_escape_string($conn, $_GET['case']);
 
-    $query = "
-        SELECT 
-            cp.id AS cp_id,
-            cp.case_id,
-            cp.party_id,
-            cp.role,
+    $query = "SELECT 
+                cp.id AS cp_id,
+                cp.case_id,
+                cp.party_id,
+                cp.role,
 
-            p.party_name,
-            p.phone,
-            p.email,
-            p.address,
+                p.party_name,
+                p.phone,
+                p.email,
+                p.address,
 
-            ca.lawyer_id AS represented_by
-
-        FROM case_parties_tbl cp
-        JOIN parties_tbl p ON cp.party_id = p.party_id
-        LEFT JOIN case_assignments_tbl ca ON ca.party_id = cp.party_id AND ca.case_id = cp.case_id
-        WHERE cp.case_id = '$case_id'
+                ca.lawyer_id AS represented_by
+              FROM case_parties_tbl cp
+              JOIN parties_tbl p ON cp.party_id = p.party_id
+              LEFT JOIN case_assignments_tbl ca ON ca.party_id = cp.party_id AND ca.case_id = cp.case_id
+              WHERE cp.case_id = '$case_id'
     ";
 
     $result = mysqli_query($conn, $query);

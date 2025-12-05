@@ -1,120 +1,128 @@
 .card-row {
-    display: flex;
-    gap: 20px;               
-    padding: 10px 0;
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
 }
 
 .card {
-    background: #fff;
-    padding: 20px;
-    border: none;
-    border-left: 4px solid transparent;
-    border-radius: 16px;
-    width: 345px;
-    height: 110px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: 0.2s ease;
-    margin-top: -25px;
+  background: #fff;
+  padding: 20px;
+  border: none;
+  border-left: 4px solid transparent;
+  border-radius: 16px;
+  width: 345px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+  margin-top: -25px;
 }
 
-.card:hover, .card-desc:hover, .card-details:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+.card:hover,
+.card-desc:hover,
+.card-details:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
 }
 
 .card h6 {
-    margin: 0 0 8px 0;
-    font-size: 14px;
-    color: #666;
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #666;
 }
 
 .card h2,
 .card .value {
-    margin: 0;
-    font-size: 22px;
-    font-weight: 700;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .card p {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: #111;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
 }
 
 .badge {
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-weight: 600;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
 }
 
-.border-blue   { border-left-color: #4c9ef7 !important; }
-.border-green  { border-left-color: #41c88a !important; }
-.border-red    { border-left-color: #f17a7a !important; }
+.border-blue {
+  border-left-color: #4c9ef7 !important;
+}
+.border-green {
+  border-left-color: #41c88a !important;
+}
+.border-red {
+  border-left-color: #f17a7a !important;
+}
 
 .badge-blue {
-    background: #e3f1ff;
-    color: #0b6edc;
+  background: #e3f1ff;
+  color: #0b6edc;
 }
 
 .badge-green {
-    background: #e6fff1;
-    color: #28a745;
+  background: #e6fff1;
+  color: #28a745;
 }
 
 .badge-black-outline {
-    border: 1px solid #000;
-    color: #000;
-    background: transparent;
+  border: 1px solid #000;
+  color: #000;
+  background: transparent;
 }
 
 .card-desc {
-    background: #fff;
-    padding: 20px 28px;
-    border: none;
-    border-left: 4px solid transparent;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    max-width: 1090px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: 0.2s ease;
+  background: #fff;
+  padding: 20px 28px;
+  border: none;
+  border-left: 4px solid transparent;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1090px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
 }
 
 .card-desc h6 {
-    margin: 0 0 8px 0;
-    font-size: 14px;
-    color: #666;
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #666;
 }
 
-.card-details{
-    background: #fff;
-    padding: 20px 28px;
-    border: none;
-    border-left: 4px solid transparent;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    max-width: 1090px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: 0.2s ease;
-    margin-top: -20px;
+.card-details {
+  background: #fff;
+  padding: 20px 28px;
+  border: none;
+  border-left: 4px solid transparent;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1090px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+  margin-top: -20px;
 }
 
 .card-d-content h6 {
-    margin: 0 0 8px 0;
-    font-size: 14px;
-    color: #666;
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #666;
 }
 
 hr {
-    margin-top: 0px;
+  margin-top: 0px;
 }
