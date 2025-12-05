@@ -1,0 +1,50 @@
+.card-tabs {
+    margin-top: 20px;
+}
+
+.case-tabs {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    background: #fff;              
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.case-tab {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 8px 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #444;
+    background: #fff;              
+    border-radius: 16px;
+    text-decoration: none;
+    transition: 0.2s ease;
+    white-space: nowrap;
+}
+
+.case-tab.active {
+    background: #0d6efd !important;
+    color: #fff !important;
+}
+
+.case-tab:hover {
+    background: #f2f7ff;           
+}
+
+.case-tab-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.case-tab-button .btn {
+    padding: 8px 8px !important;
+    border-radius: 8px !important;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f7fa;
+}
+
+.layout {
+    display: flex;
+}
+
+.main-content {
+    margin-top: 90px;  
+    margin-left: 250px; 
+    padding: 20px;
+    flex: 1;
+}
+
+.main-content table {
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.main-content table thead {
+    background-color: #1f2a3c;
+}
+
+.main-content table thead th {
+    color: #fff !important;
+    font-weight: 700;
+    padding: 12px 10px;
+    font-size: 14px;
+    border-bottom: none !important;
+}
+
+.main-content table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+.main-content table tbody tr:hover {
+    background-color: #f5f7fa;
+}
+
+.main-content table td {
+    padding: 12px 10px;
+    vertical-align: middle !important;
+    font-size: 14px;
+    color: #333;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.fw-semibold {
+    font-weight: 600;
+}
+
+.badge-custom {
+    padding: 4px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 12px;
+    display: inline-block;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.badge-criminal { 
+    background: #d8232a; 
+    color: #fff; 
+}
+
+.badge-family { 
+    background: #f59c2b; 
+    color: #fff; 
+}
+
+.badge-civil { 
+    background: #3a72f7; 
+    color: #fff; 
+}
+
+.badge-commercial { 
+    background: #13a59e; 
+    color: #fff; 
+}
+
+.badge-open {
+    color: #3cca70;
+    border: 2px solid #3cca70;
+    background: #dfffeb;
+}
+
+.badge-pending {
+    color: #4485f5;
+    border: 2px solid #4485f5;
+    background: #e7f0ff;
+}
+
+.badge-dismissed {
+    color: #9da2aa;
+    border: 2px solid #9da2aa;
+    background: transparent;
+}
+
+.badge-appeal {
+    color: #f3862b;
+    border: 2px solid #f3862b;
+    background: #fff4eb;
+}
+
+.badge-closed {
+    color: #2c2c2c;
+    border: 2px solid #2c2c2c;
+    background: transparent;
+}
+
+.badge-high {
+    color: #f46767;
+    border: 2px solid #f46767;
+    background: transparent;
+}
+
+.badge-medium {
+    color: #fd9815;
+    border: 2px solid #fd9815;
+    background: transparent;
+}
+
+.badge-low {
+    color: #7de5b7;
+    border: 2px solid #7de5b7;
+    background: transparent;
+}
+
+.table-btn {
+    font-weight: 600;
+    font-size: 13px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-view {
+    background-color: #0f57d1;
+    color: white;
+}
+
+.btn-view:hover {
+    background-color: #0b42a7;
+}
+
+.btn-archive {
+    background-color: #bf132b;
+    color: white;
+}
+
+.btn-archive:hover {
+    background-color: #961324;
+}
+
