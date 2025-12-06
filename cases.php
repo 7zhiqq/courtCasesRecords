@@ -122,7 +122,7 @@
             </div>
         </div>
 
-        <script src="js/caseSearch.js"></script>
+        <script src="js/case_search.js"></script>
     </div>
 </div>
 

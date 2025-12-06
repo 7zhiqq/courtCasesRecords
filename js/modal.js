@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     { modalId: "addCaseModal", btnId: "addCaseBtn" },
     { modalId: "addDocsModal", btnId: "addDocsBtn" },
     { modalId: "addPartyModal", btnId: "addPartyBtn" },
+    { modalId: "addJudgeModal", btnId: "addJudgeBtn" },
+    { modalId: "addLawyerModal", btnId: "addLawyerBtn" },
   ];
 
   modals.forEach((item) => {
