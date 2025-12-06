@@ -10,24 +10,25 @@
 ?>
 
 <?php if (isset($_GET['status'])): ?>
-    <div class="status-toast <?= $_GET['status'] === 'success' ? 'success' : 'error' ?>">
+    <div class="status-toast 
+        <?= $_GET['status'] === 'success' ? 'success' : 
+            ($_GET['status'] === 'deleted' ? 'danger' : 'error') ?>">
+
         <span class="close-toast"><i class="bi bi-x"></i></span>
 
         <?php if ($_GET['status'] === 'success'): ?>
+            <i class="bi bi-check-circle-fill icon"></i>
+            <div>
+                <strong>Success</strong>
+                <p>Lawyer added successfully.</p>
+            </div>
 
-            <?php if (isset($_GET['editstatus']) && $_GET['editstatus'] === 'success'): ?>
-                <i class="bi bi-check-circle-fill icon"></i>
-                <div>
-                    <strong>Success</strong>
-                    <p>Lawyer edited successfully.</p>
-                </div>
-            <?php else: ?>
-                <i class="bi bi-check-circle-fill icon"></i>
-                <div>
-                    <strong>Success</strong>
-                    <p>Lawyer added successfully.</p>
-                </div>
-            <?php endif; ?>
+        <?php elseif ($_GET['status'] === 'deleted'): ?>
+            <i class="bi bi-trash3-fill icon"></i>
+            <div>
+                <strong>Deleted</strong>
+                <p>Lawyer deleted successfully.</p>
+            </div>
 
         <?php else: ?>
             <i class="bi bi-exclamation-circle-fill icon"></i>
@@ -48,7 +49,7 @@
                 <p class="text-muted mb-0">View and track all lawyers</p>
             </div>
 
-            <button class="btn btn-primary btn-sm" id="addLawyerBtn">
+            <button class="table-btn btn btn-primary btn-sm" id="addLawyerBtn">
                 <i class="bi bi-person-plus"></i> 
                 Add Lawyer
             </button>
@@ -73,16 +74,16 @@
                                 <td><?= htmlspecialchars($lawyer['lawyer_email']); ?></td>
                                 <td class="text-center">
                                     <a href="lawyer_view.php?id=<?= urlencode($lawyer['lawyer_id']); ?>" 
-                                    class="btn btn-sm btn-primary">
+                                    class="table-btn btn-view">
                                         View
                                     </a>
 
-                                    <button class="btn btn-warning btn-sm editLawyerBtn" data-lawyer-id="<?= $lawyer['lawyer_id']; ?>">
+                                    <button class="table-btn btn btn-primary btn-sm editLawyerBtn" data-lawyer-id="<?= $lawyer['lawyer_id']; ?>">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
 
                                     <a href="lawyer_archive.php?id=<?= urlencode($lawyer['lawyer_id']); ?>" 
-                                    class="btn btn-sm btn-danger"
+                                    class="table-btn btn btn-sm btn-warning"
                                     onclick="return confirm('Are you sure you want to archive this lawyer?');">
                                         <i class="bi bi-archive"></i>
                                     </a>

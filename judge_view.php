@@ -47,7 +47,17 @@
             </div>
 
             <div class="text-md-end mt-3 mt-md-0 d-flex gap-2 ms-md-auto">
-                <button class="btn btn-primary btn-sm btn-edit">
+                <a href="judge_delete.php?id=<?= urlencode($judge['judge_id']) ?>"
+                    class="btn btn-danger btn-sm"
+                    onclick="return confirm('Are you sure you want to delete this judge?');">
+                    <i class="bi bi-trash"></i>
+                </a>
+
+                <a href="cases.php" class="btn btn-warning btn-sm">
+                    <i class="bi bi-archive"></i>
+                </a>
+
+                <button class="btn btn-primary btn-sm editJudgeBtn" data-judge-id="<?= $judge['judge_id']; ?>">
                     <i class="bi bi-pencil-square"></i> Edit
                 </button>
 
@@ -63,7 +73,9 @@
             </p>
             <ul class="list-group mb-3">
                 <?php if (empty($assigned_cases)): ?>
-                    <li class="list-group-item text-muted">No cases assigned.</li>
+                    <div class="alert alert-info">
+                        No cases assigned yet.
+                    </div>
                 <?php else: ?>
                     <?php foreach ($assigned_cases as $case): ?>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -80,10 +92,8 @@
                     <?php endforeach; ?>
                 <?php endif; ?>
             </ul>
-            <!-- <a href="judge_edit.php?id=<?= $judge['judge_id']; ?>" class="btn btn-warning">Edit</a>
-            <a href="judge_archive.php?id=<?= $judge['judge_id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')">Archive</a>
-            <a href="judges_page.php" class="btn btn-secondary">Back to List</a> -->
         </div>
     </div>
 </div>
 
+<?php include 'judge_edit.php'; ?>

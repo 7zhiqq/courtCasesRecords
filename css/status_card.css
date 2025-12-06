@@ -23,16 +23,23 @@
 .status-toast.error {
   border-color: #e74c3c;
 }
+.status-toast.danger {
+  border-color: #e74c3c;
+}
 
 .status-toast .icon {
   font-size: 24px;
 }
+
 .status-toast.success .icon {
   color: #2ecc71;
 }
-.status-toast.error .icon {
+
+.status-toast.error .icon,
+.status-toast.danger .icon {
   color: #e74c3c;
 }
+
 
 .close-toast {
   position: absolute;
@@ -48,6 +55,9 @@
   font-size: 13px;
   color: #444;
 }
+
+
+
 
 @keyframes fadeIn {
   from {

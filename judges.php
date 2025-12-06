@@ -10,24 +10,25 @@
 ?>
 
 <?php if (isset($_GET['status'])): ?>
-    <div class="status-toast <?= $_GET['status'] === 'success' ? 'success' : 'error' ?>">
+    <div class="status-toast 
+        <?= $_GET['status'] === 'success' ? 'success' : 
+            ($_GET['status'] === 'deleted' ? 'danger' : 'error') ?>">
+
         <span class="close-toast"><i class="bi bi-x"></i></span>
 
         <?php if ($_GET['status'] === 'success'): ?>
+            <i class="bi bi-check-circle-fill icon"></i>
+            <div>
+                <strong>Success</strong>
+                <p>Judge added successfully.</p>
+            </div>
 
-            <?php if (isset($_GET['editstatus']) && $_GET['editstatus'] === 'success'): ?>
-                <i class="bi bi-check-circle-fill icon"></i>
-                <div>
-                    <strong>Success</strong>
-                    <p>Judge edited successfully.</p>
-                </div>
-            <?php else: ?>
-                <i class="bi bi-check-circle-fill icon"></i>
-                <div>
-                    <strong>Success</strong>
-                    <p>Judge added successfully.</p>
-                </div>
-            <?php endif; ?>
+        <?php elseif ($_GET['status'] === 'deleted'): ?>
+            <i class="bi bi-trash3-fill icon"></i>
+            <div>
+                <strong>Deleted</strong>
+                <p>Judge deleted successfully.</p>
+            </div>
 
         <?php else: ?>
             <i class="bi bi-exclamation-circle-fill icon"></i>
@@ -49,7 +50,7 @@
                 <p class="text-muted mb-0">View and track all judges</p>
             </div>
 
-            <button class="btn btn-primary btn-sm" id="addJudgeBtn">
+            <button class="table-btn btn btn-primary btn-sm" id="addJudgeBtn">
                 <i class="bi bi-person-plus"></i> 
                 Add Judge
             </button>
@@ -74,16 +75,16 @@
                                 <td><?= htmlspecialchars($judge['judge_email']); ?></td>
                                 <td class="text-center">
                                     <a href="judge_view.php?id=<?= urlencode($judge['judge_id']); ?>" 
-                                    class="btn btn-sm btn-primary">
+                                    class="table-btn btn-view">
                                         View
                                     </a>
 
-                                    <button class="btn btn-warning btn-sm editJudgeBtn" data-judge-id="<?= $judge['judge_id']; ?>">
+                                    <button class="table-btn btn btn-primary btn-sm editJudgeBtn" data-judge-id="<?= $judge['judge_id']; ?>">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
 
                                     <a href="judge_archive.php?id=<?= urlencode($judge['judge_id']); ?>" 
-                                    class="btn btn-sm btn-danger"
+                                    class="table-btn btn btn-sm btn-warning"
                                     onclick="return confirm('Are you sure you want to archive this judge?');">
                                         <i class="bi bi-archive"></i>
                                     </a>

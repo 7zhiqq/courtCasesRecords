@@ -77,6 +77,16 @@
             </div>
 
             <div class="text-md-end mt-3 mt-md-0 d-flex gap-2 ms-md-auto">
+                <a href="case_delete.php?id=<?= urlencode($case['case_number']) ?>"
+                    class="btn btn-danger btn-sm"
+                    onclick="return confirm('Are you sure you want to delete this case?');">
+                    <i class="bi bi-trash"></i>
+                </a>
+
+                <a href="cases.php" class="btn btn-warning btn-sm">
+                    <i class="bi bi-archive"></i>
+                </a>
+
                 <button class="btn btn-primary btn-sm btn-edit">
                     <i class="bi bi-pencil-square"></i> Edit
                 </button>
@@ -84,6 +94,8 @@
                 <a href="cases.php" class="btn btn-secondary btn-sm">
                     <i class="bi bi-arrow-left-circle"></i> Back
                 </a>
+
+                
             </div>
         </div>
 

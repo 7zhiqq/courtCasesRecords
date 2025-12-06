@@ -47,10 +47,19 @@
             </div>
 
             <div class="d-flex gap-2 mt-3 mt-md-0">
-                <a href="lawyer_edit.php?id=<?= htmlspecialchars($lawyer['lawyer_id']); ?>" 
-                   class="btn btn-primary btn-sm">
-                    <i class="bi bi-pencil-square"></i> Edit
+                <a href="lawyer_delete.php?id=<?= urlencode($lawyer['lawyer_id']) ?>"
+                    class="btn btn-danger btn-sm"
+                    onclick="return confirm('Are you sure you want to delete this lawyer?');">
+                    <i class="bi bi-trash"></i>
                 </a>
+
+                <a href="cases.php" class="btn btn-warning btn-sm">
+                    <i class="bi bi-archive"></i>
+                </a>
+
+                <button class="btn btn-primary btn-sm editLawyerBtn" data-lawyer-id="<?= $lawyer['lawyer_id']; ?>">
+                    <i class="bi bi-pencil-square"></i> Edit
+                </button>
 
                 <a href="lawyers.php" class="btn btn-secondary btn-sm">
                     <i class="bi bi-arrow-left-circle"></i> Back
@@ -121,3 +130,5 @@
 
     </div>
 </div>
+
+<?php include 'lawyer_edit.php'; ?>
