@@ -126,3 +126,19 @@
 hr {
   margin-top: 0px;
 }
+
+.card-profile {
+  background: #fff;
+  padding: 20px;
+  border: none;
+  border-left: 4px solid transparent;
+  border-radius: 16px;
+  width: 1090px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+  margin-top: -25px;
+}
