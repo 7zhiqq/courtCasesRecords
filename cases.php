@@ -5,14 +5,7 @@
     include 'include/functions.php';
     
     include 'include/queries/case_counts.php';
-
-    $query = "SELECT c.*, j.judge_firstname, j.judge_lastname
-            FROM case_tbl c
-            LEFT JOIN judge_tbl j
-            ON c.judge_id = j.judge_id";
-
-    $result = mysqli_query($conn, $query);
-    $cases = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    include 'include/queries/cases.php';
 ?>
 
 <?php if (isset($_GET['status'])): ?>
@@ -58,7 +51,7 @@
                 <p class="text-muted mb-0">Manage and track all court cases</p>
             </div>
 
-            <button class="table-btn btn btn-primary btn-sm" id="addCaseBtn">
+            <button class="table-btn btn btn-primary btn-sm" id="addCaseBtn" style="width: 150px;height:36px">
                 <i class="bi bi-folder-plus"></i>
                 Add New Case
             </button>
@@ -74,64 +67,7 @@
 
         <div class="table-container mt-3">
             <div class="table-responsive">
-                <table class="table table-hover align-middle shadow-sm">
-                    <thead class="table-dark">
-                        <tr>
-                            <th class="text-center" width="130">Case ID</th>
-                            <th class="text-center" width="100">Type</th>
-                            <th width="200">Case Title</th>
-                            <th width="150">Judge</th>
-                            <th class="text-center" width="130">Filing Date</th>
-                            <th>Status</th>
-                            <th>Priority</th>
-                            <th class="text-center" width="140">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="noResultsRow" style="display: none;">
-                            <td colspan="8" class="text-center py-4">
-                                <div class="empty-state">
-                                    <i class="bi bi-funnel" style="font-size: 40px; color: #bfc5d2;"></i>
-                                    <p class="mt-2 mb-2" style="color:#555; font-size:15px;">
-                                        No cases found matching your filters
-                                    </p>
-                                    <button id="clearFiltersBtn" class="btn btn-outline-secondary btn-sm">
-                                        Clear Filters
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <?php foreach ($cases as $case): ?>
-                        <tr>
-                            <td class="text-center fw-semibold"><?= htmlspecialchars($case['case_number']); ?></td>
-                            <td><?= typeBadge($case['case_type']); ?></td>
-                            <td class="fw-semibold"><?= htmlspecialchars($case['case_title']); ?></td>
-
-                            <td>
-                                <?php if (!empty($case['judge_firstname'])): ?>
-                                    <?= htmlspecialchars('Hon. ' . $case['judge_firstname'] . ' ' . $case['judge_lastname']); ?>
-                                <?php else: ?>
-                                    <span class="text-muted">—</span>
-                                <?php endif; ?>
-                            </td>
-
-                            <td class="text-center"><?= htmlspecialchars($case['filing_date']); ?></td>
-                            <td><?= statusBadge($case['status']); ?></td>
-                            <td><?= priorityBadge($case['priority']); ?></td>
-
-                            <td class="text-center">
-                                <a href="case_view.php?case=<?= $case['case_number']; ?>" class="table-btn btn-view">View</a>
-                                <a href="case_archive.php?case=<?= $case['case_number']; ?>" 
-                                   class="table-btn btn btn-sm btn-warning" 
-                                   onclick="return confirm('Are you sure?')">
-                                   <i class="bi bi-archive"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                <?php include 'include/tables/case_table.php' ?>
             </div>
         </div>
 

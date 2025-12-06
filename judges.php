@@ -44,16 +44,24 @@
 <div class="layout d-flex">
     <?php include 'include/sidebar.php'; ?>
     <div class="main-content">
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center mb-3">
             <div>
                 <h5 class="fw-semibold mb-1">Judge</h5>
                 <p class="text-muted mb-0">View and track all judges</p>
             </div>
 
-            <button class="table-btn btn btn-primary btn-sm" id="addJudgeBtn">
-                <i class="bi bi-person-plus"></i> 
-                Add Judge
-            </button>
+            <div class="d-flex align-items-center gap-2">
+                <button class="table-btn btn btn-primary btn-sm" style="width: 170px;height:36px">
+                    <i class="bi bi-person-plus"></i> Add Judge
+                </button>
+                <div class="search-input position-relative">
+                    <i class="bi bi-search position-absolute" 
+                    style="color:#7a7a7a; top: 50%; left: 10px; transform: translateY(-50%);"></i>
+                    <input type="text" class="form-control" 
+                        placeholder="Search judge by name, id..." 
+                        style="border: 1px solid #7a7a7a; border-radius: 5px; width: 220px; height: 36px; padding-left: 30px;margin-right:-50px">
+                </div>
+            </div>
         </div>
 
         <div class="mt-4">
@@ -82,12 +90,6 @@
                                     <button class="table-btn btn btn-primary btn-sm editJudgeBtn" data-judge-id="<?= $judge['judge_id']; ?>">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
-
-                                    <a href="judge_archive.php?id=<?= urlencode($judge['judge_id']); ?>" 
-                                    class="table-btn btn btn-sm btn-warning"
-                                    onclick="return confirm('Are you sure you want to archive this judge?');">
-                                        <i class="bi bi-archive"></i>
-                                    </a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -97,6 +99,7 @@
                 <div class="alert alert-info">No judge found.</div>
             <?php endif; ?>
         </div>
+        <script src="js/judge_search.js"></script>
     </div>
 </div>
 

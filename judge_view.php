@@ -53,10 +53,6 @@
                     <i class="bi bi-trash"></i>
                 </a>
 
-                <a href="cases.php" class="btn btn-warning btn-sm">
-                    <i class="bi bi-archive"></i>
-                </a>
-
                 <button class="btn btn-primary btn-sm editJudgeBtn" data-judge-id="<?= $judge['judge_id']; ?>">
                     <i class="bi bi-pencil-square"></i> Edit
                 </button>

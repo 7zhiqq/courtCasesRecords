@@ -43,16 +43,24 @@
 <div class="layout d-flex">
     <?php include 'include/sidebar.php'; ?>
     <div class="main-content">
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center mb-3">
             <div>
                 <h5 class="fw-semibold mb-1">Lawyer</h5>
-                <p class="text-muted mb-0">View and track all lawyers</p>
+                <p class="text-muted mb-0">View and track all lwayers</p>
             </div>
 
-            <button class="table-btn btn btn-primary btn-sm" id="addLawyerBtn">
-                <i class="bi bi-person-plus"></i> 
-                Add Lawyer
-            </button>
+            <div class="d-flex align-items-center gap-2">
+                <button class="table-btn btn btn-primary btn-sm" style="width: 175px;height:36px">
+                    <i class="bi bi-person-plus"></i> Add Lawyer
+                </button>
+                <div class="search-input position-relative">
+                    <i class="bi bi-search position-absolute" 
+                    style="color:#7a7a7a; top: 50%; left: 10px; transform: translateY(-50%);"></i>
+                    <input type="text" class="form-control" 
+                        placeholder="Search lawyer by name, id..." 
+                        style="border: 1px solid #7a7a7a; border-radius: 5px; width: 220px; height: 36px; padding-left: 30px;margin-right:-50px">
+                </div>
+            </div>
         </div>
 
         <div class="mt-4">
@@ -81,12 +89,6 @@
                                     <button class="table-btn btn btn-primary btn-sm editLawyerBtn" data-lawyer-id="<?= $lawyer['lawyer_id']; ?>">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
-
-                                    <a href="lawyer_archive.php?id=<?= urlencode($lawyer['lawyer_id']); ?>" 
-                                    class="table-btn btn btn-sm btn-warning"
-                                    onclick="return confirm('Are you sure you want to archive this lawyer?');">
-                                        <i class="bi bi-archive"></i>
-                                    </a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -96,7 +98,7 @@
                 <div class="alert alert-info">No lawyer found.</div>
             <?php endif; ?>
         </div>
-
+        <script src="js/lawyer_search.js"></script>
     </div>
 </div>
 
