@@ -10,15 +10,25 @@
 ?>
 
 <?php if (isset($_GET['status'])): ?>
-    <div class="status-toast <?= $_GET['status'] == 'success' ? 'success' : 'error' ?>">
+    <div class="status-toast <?= $_GET['status'] === 'success' ? 'success' : 'error' ?>">
         <span class="close-toast"><i class="bi bi-x"></i></span>
 
         <?php if ($_GET['status'] === 'success'): ?>
-            <i class="bi bi-check-circle-fill icon"></i>
-            <div>
-                <strong>Success</strong>
-                <p>Lawyer added successfully.</p>
-            </div>
+
+            <?php if (isset($_GET['editstatus']) && $_GET['editstatus'] === 'success'): ?>
+                <i class="bi bi-check-circle-fill icon"></i>
+                <div>
+                    <strong>Success</strong>
+                    <p>Lawyer edited successfully.</p>
+                </div>
+            <?php else: ?>
+                <i class="bi bi-check-circle-fill icon"></i>
+                <div>
+                    <strong>Success</strong>
+                    <p>Lawyer added successfully.</p>
+                </div>
+            <?php endif; ?>
+
         <?php else: ?>
             <i class="bi bi-exclamation-circle-fill icon"></i>
             <div>
@@ -67,10 +77,9 @@
                                         View
                                     </a>
 
-                                    <a href="lawyer_edit.php?id=<?= urlencode($lawyer['lawyer_id']); ?>" 
-                                    class="btn btn-sm btn-warning">
+                                    <button class="btn btn-warning btn-sm editLawyerBtn" data-lawyer-id="<?= $lawyer['lawyer_id']; ?>">
                                         <i class="bi bi-pencil-square"></i>
-                                    </a>
+                                    </button>
 
                                     <a href="lawyer_archive.php?id=<?= urlencode($lawyer['lawyer_id']); ?>" 
                                     class="btn btn-sm btn-danger"
@@ -91,6 +100,7 @@
 </div>
 
 <?php include 'lawyer_add.php'; ?>
+<?php include 'lawyer_edit.php'; ?>
 
 <link rel="stylesheet" href="css/modal.css">
 <script src="js/modal.js"></script>
