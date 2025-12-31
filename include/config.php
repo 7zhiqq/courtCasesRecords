@@ -1,7 +1,7 @@
 <?php
     $host = 'localhost';
     $root = 'root';
-    $password = 'sevenzhiq';
+    $password = 'password';
     $db = 'courtrecords_db';
 
     $conn = new mysqli($host, $root, $password, $db);
